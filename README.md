@@ -1,1 +1,0 @@
-# Smart-garbage-dumpster
