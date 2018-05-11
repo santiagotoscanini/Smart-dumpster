@@ -1,0 +1,28 @@
+#btn1{
+     padding: 12px 24px;
+     font-size: 22px;
+     line-height: normal;
+     -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+     border-radius: 8px;
+    background: #1c8bff;
+}
+#btn1:hover {
+     background: #25b9ff;
+ }
+textarea {
+    resize: none;
+}
+@media (max-width: 768px) {
+    .container {
+        width: 85vw;
+        max-width: 85vw;
+    }
+    .text-box {
+        max-height: 55vh;
+    }
+    .navbar-default {
+        background-color: #fff !important;
+        border-color: #e6e6e6;
+    }
+}
