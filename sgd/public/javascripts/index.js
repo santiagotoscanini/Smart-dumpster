@@ -18,4 +18,5 @@ const dictate = () => {
         texto.textContent  = speechToText;
         container.value = (texto.innerHTML);
     }
-}
+};
+
