@@ -8,5 +8,5 @@ var schema = new Schema({
 },{
     versionKey: false // No aparece un campo '__v' en la base de datos
 });
-
+mongoose.model('Residuos', schema);
 module.exports = mongoose.model('Residuos', schema);
