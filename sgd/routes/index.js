@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Residuos = require('../model/garbage');
 
-
+var asd = require('../model/garbage');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -14,11 +14,6 @@ router.get('/', function(req, res, next) {
     }
     res.render('index', { title: 'Smart Garbage Dumpster', residuos: residuosChunks});
   });
-    function dataset(){
-        var datos = require('../public/javascripts/containerdata');
-        console.log(datos);
-    };
-    setTimeout(dataset,100);
 });
 
 module.exports = router;
