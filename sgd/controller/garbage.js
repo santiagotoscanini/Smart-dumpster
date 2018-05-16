@@ -10,11 +10,12 @@ function getGarbageID(req, res) {
         res.status(200).send({garbage});
     });
 };
-
+var clim = require("clim");
+var console = clim();
+clim(console, true);
 function getGarbageNR(req, res) {
-    // todo preguntar como hacer para llamar a uno especifico
-    //let nombre_residuo = req.params.nombre_residuo;
-    garbage.find({},{"nombre_residuo":1},(err, name) => {
+    var name = req.params.nom_residuo;
+    garbage.findOne({"nombre_residuo":name},(err, name) => {
         if(err){
             return res.status(500).send({message: `error al realizar la peticion : ${err}`});
         }
@@ -52,6 +53,7 @@ module.exports = {
     getGarbageNR,
     saveGarbage
 };
+
 
 
 
