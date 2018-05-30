@@ -17,7 +17,7 @@ function get_mic_data() {
     // Creación de la petición HTTP
     var req = new XMLHttpRequest();
     // Petición HTTP GET síncrona hacia el archivo del servidor${query}
-    req.open("GET", `http://localhost:3000/api/residuo/nom/${query}`,false);
+    req.open("GET", `http://localhost:3000/api/residuo/nom/${query}`, false);
     // null pq es get
     req.send(null);
     // Impresión por la consola de la respuesta recibida desde el servidor

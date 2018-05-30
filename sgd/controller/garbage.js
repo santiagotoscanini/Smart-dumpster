@@ -83,7 +83,11 @@ function saveFilen(req, res){
             stream.write(dataName);
         });
     }
-    /*        var five = require("johnny-five");
+
+    res.status(200).send("Correcto");
+};
+//Si algun dia usamos johnny five
+/*        var five = require("johnny-five");
         var board = new five.Board({port: "COM14"});
 
         board.on("ready", function() {
@@ -91,10 +95,6 @@ function saveFilen(req, res){
             led.blink(3000);
             led.stop();
         });*/
-    res.status(200).send("Correcto");
-};
-//Si algun dia usamos johnny five
-/*  */
 module.exports = {
     getGarbageID,
     getGarbage,
