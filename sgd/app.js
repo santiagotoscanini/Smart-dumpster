@@ -30,7 +30,7 @@ mongoose.connect('mongodb+srv://nico:toor@sgd-ftwrh.mongodb.net/reciclaje', (err
     if (err) {
         return console.log(`Error al conectarse a la bd: ${err}`);
     }
-    console.log('Conexion a la bd establecida');
+    //console.log('Conexion a la bd establecida');
 });
 
 const garbageCtrl = require('./controller/garbage');
@@ -41,8 +41,12 @@ app.get('/api/residuo', garbageCtrl.getGarbage);
 app.get('/api/residuo/:residuoId',garbageCtrl.getGarbageID);
 //GET: Nombre especifico
 app.get('/api/residuo/nom/:nom_residuo',garbageCtrl.getGarbageNR);
+//GET: tipo de residuo especifico
+app.get('/api/residuo/tipo/:tipo_residuo',garbageCtrl.getGarbageTE);
 //POST: Guardar residuos
 app.post('/api/residuo', garbageCtrl.saveGarbage);
+//Guardar archivo con nombre de coso
+app.get('/api/residuo/archivo/:nom_residuo_file', garbageCtrl.saveFilen);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -58,5 +62,14 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+/*
+var five = require("johnny-five");
+var board = new five.Board({port: "COM14"});
+
+board.on("ready", function() {
+    var led = new five.Led(13);
+    led.blink(500);
+});
+*/
 
 module.exports = app;

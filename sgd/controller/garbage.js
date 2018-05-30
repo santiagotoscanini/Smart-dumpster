@@ -1,5 +1,7 @@
 const garbage = require('../model/garbage');
 
+var fs = require('fs');
+
 function getGarbageID(req, res) {
     let residuoId = req.params.residuoId;
 
@@ -10,9 +12,7 @@ function getGarbageID(req, res) {
         res.status(200).send({garbage});
     });
 };
-var clim = require("clim");
-var console = clim();
-clim(console, true);
+
 function getGarbageNR(req, res) {
     var name = req.params.nom_residuo;
     garbage.findOne({"nombre_residuo":name},(err, name) => {
@@ -20,6 +20,17 @@ function getGarbageNR(req, res) {
             return res.status(500).send({message: `error al realizar la peticion : ${err}`});
         }
         res.json(name);
+    });
+};
+
+//Tipo especifico
+function getGarbageTE(req, res) {
+    var tipo = req.params.tipo_residuo;
+    garbage.findOne({"tipo_residuo":tipo},(err, tipo) => {
+        if(err){
+            return res.status(500).send({message: `error al realizar la peticion : ${err}`});
+        }
+        res.json(tipo);
     });
 };
 
@@ -32,8 +43,6 @@ function getGarbage(req, res) {
 };
 
 function saveGarbage(req, res){
-    console.log('POST api/residuo');
-    console.log(req.body);
 
     let residuo = new garbage();
     residuo.nombre_residuo = req.body.nombre_residuo;
@@ -46,12 +55,32 @@ function saveGarbage(req, res){
     });
 };
 
+function saveFilen(req, res){
 
+    var dataName = req.params.nom_residuo_file;
+
+    var fs = require("fs");
+    var stream = fs.createWriteStream("basura.txt");
+    stream.once('open', function () {
+        stream.write(dataName);
+    });
+    res.status(200).send("Correcto");
+};
+//Si algun dia usamos johnny five
+/*  var five = require("johnny-five");
+        var board = new five.Board({port: "COM14"});
+
+        board.on("ready", function() {
+            var led = new five.Led(13);
+            led.blink(500);
+ });*/
 module.exports = {
     getGarbageID,
     getGarbage,
     getGarbageNR,
-    saveGarbage
+    saveGarbage,
+    saveFilen,
+    getGarbageTE
 };
 
 

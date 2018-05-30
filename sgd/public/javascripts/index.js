@@ -22,9 +22,31 @@ function get_mic_data() {
     req.send(null);
     // Impresión por la consola de la respuesta recibida desde el servidor
     console.log(req.responseText);
+
     var request = req.responseText;
     if(request.includes(query)){
-        console.log(`existe `+query);
+        var tipo_amarillo = "amarillo";
+        var tipo_azul ="azul";
+        var tipo_blanco = "blanco";
+        if(request.includes(tipo_amarillo)){
+            var req2 = new XMLHttpRequest();
+            req2.open("GET", `/api/residuo/archivo/${1}`,false);
+            req2.send(null);
+        }else if(request.includes(tipo_azul)){
+            var req2 = new XMLHttpRequest();
+            req2.open("GET", `/api/residuo/archivo/${2}`,false);
+            req2.send(null);
+        }else if(request.includes(tipo_blanco)){
+            var req2 = new XMLHttpRequest();
+            req2.open("GET", `/api/residuo/archivo/${3}`,false);
+            req2.send(null);
+        }
+
+        //console.log("holaxd"+req.responseText);
+
+
+        console.log(`todo funca: `+query);
+
     }
     return console.log(query);
 };
