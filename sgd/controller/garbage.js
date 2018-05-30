@@ -58,22 +58,43 @@ function saveGarbage(req, res){
 function saveFilen(req, res){
 
     var dataName = req.params.nom_residuo_file;
-
-    var fs = require("fs");
-    var stream = fs.createWriteStream("basura.txt");
-    stream.once('open', function () {
-        stream.write(dataName);
-    });
-    res.status(200).send("Correcto");
-};
-//Si algun dia usamos johnny five
-/*  var five = require("johnny-five");
+    if(dataName == 1){
+        var fs = require("fs");
+        var stream = fs.createWriteStream("basura.txt");
+        stream.once('open', function () {
+            stream.write(dataName);
+        });
+    }else if(dataName == 2){
+        var fs = require("fs");
+        var stream = fs.createWriteStream("basura.txt");
+        stream.once('open', function () {
+            stream.write(dataName);
+        });
+    }else if(dataName == 3){
+        var fs = require("fs");
+        var stream = fs.createWriteStream("basura.txt");
+        stream.once('open', function () {
+            stream.write(dataName);
+        });
+    }else if(dataName == 4){
+        var fs = require("fs");
+        var stream = fs.createWriteStream("basura.txt");
+        stream.once('open', function () {
+            stream.write(dataName);
+        });
+    }
+    /*        var five = require("johnny-five");
         var board = new five.Board({port: "COM14"});
 
         board.on("ready", function() {
             var led = new five.Led(13);
-            led.blink(500);
- });*/
+            led.blink(3000);
+            led.stop();
+        });*/
+    res.status(200).send("Correcto");
+};
+//Si algun dia usamos johnny five
+/*  */
 module.exports = {
     getGarbageID,
     getGarbage,

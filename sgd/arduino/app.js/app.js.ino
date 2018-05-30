@@ -10,15 +10,15 @@ void loop() {
   if(Serial.available()>0){
     if(var= '1'){
       pinMode(13, HIGH);
-      delay(1500);
+      delay(3000);
       pinMode(13, LOW);
-      delay(1500);
+      delay(3000);
     }
     if(var= '2'){
       pinMode(13, HIGH);
-      delay(10);
+      delay(150);
       pinMode(13, LOW);
-      delay(10);
+      delay(150);
     }
     if(var= '3'){
       pinMode(13, HIGH);

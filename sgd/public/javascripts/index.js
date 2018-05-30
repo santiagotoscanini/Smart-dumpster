@@ -24,6 +24,7 @@ function get_mic_data() {
     console.log(req.responseText);
 
     var request = req.responseText;
+
     if(request.includes(query)){
         var tipo_amarillo = "amarillo";
         var tipo_azul ="azul";
@@ -33,20 +34,22 @@ function get_mic_data() {
             req2.open("GET", `/api/residuo/archivo/${1}`,false);
             req2.send(null);
         }else if(request.includes(tipo_azul)){
-            var req2 = new XMLHttpRequest();
-            req2.open("GET", `/api/residuo/archivo/${2}`,false);
-            req2.send(null);
+            var req3 = new XMLHttpRequest();
+            req3.open("GET", `/api/residuo/archivo/${2}`,false);
+            req3.send(null);
         }else if(request.includes(tipo_blanco)){
-            var req2 = new XMLHttpRequest();
-            req2.open("GET", `/api/residuo/archivo/${3}`,false);
-            req2.send(null);
+            var req4 = new XMLHttpRequest();
+            req4.open("GET", `/api/residuo/archivo/${3}`,false);
+            req4.send(null);
         }
-
         //console.log("holaxd"+req.responseText);
-
 
         console.log(`todo funca: `+query);
 
+    }else{
+        var req5 = new XMLHttpRequest();
+        req5.open("GET", `/api/residuo/archivo/${4}`,false);
+        req5.send(null);
     }
     return console.log(query);
 };
