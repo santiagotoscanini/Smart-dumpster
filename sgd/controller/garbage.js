@@ -59,41 +59,29 @@ function saveFilen(req, res){
 
     var dataName = req.params.nom_residuo_file;
     var dataCuatro = 4;
+    function saveData(){
+        var fs = require("fs");
+        let path = "basura.txt";
+        fs.writeFile(path,dataName, (err) => {
+            if (err) throw err;
+            console.log('guardado el 1!');
+        });
+
+        setTimeout( function ()  {
+            fs.writeFile(path,dataCuatro, (err) => {
+                if (err) throw err;
+                console.log('guardado el 4');
+            });
+        }, 5000);
+    }
     if(dataName == 1){
-
-        var fs = require("fs");
-        var stream = fs.createWriteStream("basura.txt");
-
-        stream.once("write", function () {
-            stream.write(dataName);
-           // stream.write(dataName);
-           /* stream.write(dataName);
-            stream.write();
-            stream.write(dataCuatro);
-            /*setTimeout(function() {
-                stream.write(dataCuatro);
-            }, delayInMilliseconds);*/
-        });
-
+        saveData()
     }else if(dataName == 2){
-        var fs = require("fs");
-        var stream = fs.createWriteStream("basura.txt");
-        stream.once('open', function () {
-            stream.write(dataName);
-        });
-
+        saveData()
     }else if(dataName == 3){
-        var fs = require("fs");
-        var stream = fs.createWriteStream("basura.txt");
-        stream.once('open', function () {
-            stream.write(dataName);
-        });
+        saveData()
     }else if(dataName == 4){
-        var fs = require("fs");
-        var stream = fs.createWriteStream("basura.txt");
-        stream.once('open', function () {
-            stream.write(dataName);
-        });
+        saveData()
     }
 
     res.status(200).send("Correcto");

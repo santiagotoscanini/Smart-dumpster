@@ -19,22 +19,17 @@ void loop() {
       if (num<0 || num>180){  
       Serial.println("no gires tanto man");
       }else if(num == 1){
-        servo1.write(130);
+        servo1.write(70);
       }else if(num == 2){
-        servo1.write(130);
+        servo1.write(70);
       }else if(num == 3){
-        servo1.write(130);
+        servo1.write(70);
       }else if(num == 4){
         servo1.write(0);
       }
        
   }
 }
-    
-    
-
-
-
 
 
 
