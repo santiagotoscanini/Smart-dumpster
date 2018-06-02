@@ -5,8 +5,8 @@ mongoose.connect('mongodb+srv://nico:toor@sgd-ftwrh.mongodb.net/reciclaje')
 
 var residuos =  [
     new Residuo({
-        nombre_residuo: 'papas lays',
-        tipo_residuo: 'amarillo',
+        nombre_residuo: 'cartón',
+        tipo_residuo: 'azul',
         descripcion: 'random'
     })
 ];

@@ -60,14 +60,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-/*
-var five = require("johnny-five");
-var board = new five.Board({port: "COM14"});
-
-board.on("ready", function() {
-    var led = new five.Led(13);
-    led.blink(500);
-});
-*/
 
 module.exports = app;

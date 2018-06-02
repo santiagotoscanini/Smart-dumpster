@@ -58,13 +58,14 @@ function saveGarbage(req, res){
 function saveFilen(req, res){
 
     var dataName = req.params.nom_residuo_file;
-    var dataCuatro = 4;
+    const dataCuatro = 4;
+
     function saveData(){
         var fs = require("fs");
         let path = "basura.txt";
         fs.writeFile(path,dataName, (err) => {
             if (err) throw err;
-            console.log('guardado el 1!');
+            console.log('guardado el: '+dataName);
         });
 
         setTimeout( function ()  {
@@ -74,27 +75,25 @@ function saveFilen(req, res){
             });
         }, 5000);
     }
-    if(dataName == 1){
-        saveData()
-    }else if(dataName == 2){
-        saveData()
-    }else if(dataName == 3){
-        saveData()
-    }else if(dataName == 4){
-        saveData()
+
+    switch(dataName) {
+        case "1":
+            saveData();
+            break;
+        case "2":
+            saveData();
+            break;
+        case "3":
+            saveData();
+            break;
+        case "4":
+            saveData();
+            break;
     }
 
     res.status(200).send("Correcto");
 };
-//Si algun dia usamos johnny five
-/*        var five = require("johnny-five");
-        var board = new five.Board({port: "COM14"});
 
-        board.on("ready", function() {
-            var led = new five.Led(13);
-            led.blink(3000);
-            led.stop();
-        });*/
 module.exports = {
     getGarbageID,
     getGarbage,
