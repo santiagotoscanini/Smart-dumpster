@@ -58,24 +58,36 @@ function saveGarbage(req, res){
 function saveFilen(req, res){
 
     var dataName = req.params.nom_residuo_file;
+
+    var five = require("johnny-five");
+    var board = new five.Board({port: "COM14"});
+
+
     if(dataName == 1){
-        var fs = require("fs");
+
+        board.on("ready", function() {
+            var servo = new five.Servo({pin: 7});
+            servo.move(0);
+            /*setInterval(() => {
+                servo.move(50);
+            }, 2000);*/
+            this.disconnect();
+            this.connect();
+        });
+        //board.io.sp.close()
+        /*var fs = require("fs");
         var stream = fs.createWriteStream("basura.txt");
         stream.once('open', function () {
             stream.write(dataName);
-        });
+        });*/
     }else if(dataName == 2){
-        var fs = require("fs");
-        var stream = fs.createWriteStream("basura.txt");
-        stream.once('open', function () {
-            stream.write(dataName);
-        });
+
     }else if(dataName == 3){
-        var fs = require("fs");
-        var stream = fs.createWriteStream("basura.txt");
-        stream.once('open', function () {
-            stream.write(dataName);
-        });
+        var servo = new five.Servo({pin: 7});
+        servo.move(0);
+        setInterval(() => {
+            servo.move(50);
+        }, 6000);
     }else if(dataName == 4){
         var fs = require("fs");
         var stream = fs.createWriteStream("basura.txt");

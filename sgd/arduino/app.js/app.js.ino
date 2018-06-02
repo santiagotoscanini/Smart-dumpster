@@ -1,30 +1,31 @@
-String var = "";
+#include <Servo.h>
+
+const int Servo1 = 7;
+Servo servo1;
+//Servo servo2;
+  
+int angulo = 0;
+int num = 0;
+int nummoduleado = 0;
+
 void setup() {
-  // put your setup code here, to run once:
-  pinMode(13,HIGH);
-  Serial.begin(9600);
+  
+servo1.attach(Servo1, 650, 3000);
+angulo = map(num, 0, 180, 180, 0);
+Serial.begin(9600);
+servo1.write(0);
+num = 90;
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  if(Serial.available()>0){
-    if(var= '1'){
-      pinMode(13, HIGH);
-      delay(3000);
-      pinMode(13, LOW);
-      delay(3000);
-    }
-    if(var= '2'){
-      pinMode(13, HIGH);
-      delay(150);
-      pinMode(13, LOW);
-      delay(150);
-    }
-    if(var= '3'){
-      pinMode(13, HIGH);
-      delay(5000);
-      pinMode(13, LOW);
-      delay(5000);
-    }
+while(Serial.available()>0){
+  
+  num = Serial.parseInt();
+  //nummoduleado = num%10; 
+  //num = num / 10;
+  angulo = map(num, 0, 180, 180, 0);
+  servo1.write(angulo);
+  delay(20);
+  
   }
 }
