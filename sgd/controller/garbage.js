@@ -58,36 +58,36 @@ function saveGarbage(req, res){
 function saveFilen(req, res){
 
     var dataName = req.params.nom_residuo_file;
-
-    var five = require("johnny-five");
-    var board = new five.Board({port: "COM14"});
-
-
+    var dataCuatro = 4;
     if(dataName == 1){
 
-        board.on("ready", function() {
-            var servo = new five.Servo({pin: 7});
-            servo.move(0);
-            /*setInterval(() => {
-                servo.move(50);
-            }, 2000);*/
-            this.disconnect();
-            this.connect();
+        var fs = require("fs");
+        var stream = fs.createWriteStream("basura.txt");
+
+        stream.once("write", function () {
+            stream.write(dataName);
+           // stream.write(dataName);
+           /* stream.write(dataName);
+            stream.write();
+            stream.write(dataCuatro);
+            /*setTimeout(function() {
+                stream.write(dataCuatro);
+            }, delayInMilliseconds);*/
         });
-        //board.io.sp.close()
-        /*var fs = require("fs");
+
+    }else if(dataName == 2){
+        var fs = require("fs");
         var stream = fs.createWriteStream("basura.txt");
         stream.once('open', function () {
             stream.write(dataName);
-        });*/
-    }else if(dataName == 2){
+        });
 
     }else if(dataName == 3){
-        var servo = new five.Servo({pin: 7});
-        servo.move(0);
-        setInterval(() => {
-            servo.move(50);
-        }, 6000);
+        var fs = require("fs");
+        var stream = fs.createWriteStream("basura.txt");
+        stream.once('open', function () {
+            stream.write(dataName);
+        });
     }else if(dataName == 4){
         var fs = require("fs");
         var stream = fs.createWriteStream("basura.txt");

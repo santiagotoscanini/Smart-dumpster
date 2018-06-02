@@ -11,6 +11,6 @@ hola = True
 while(hola):
     print(readMe)
     ser.write(readMe.encode())
-    time.sleep(20)
+    time.sleep(5)
     readMe = open("basura.txt","r").read()
 
