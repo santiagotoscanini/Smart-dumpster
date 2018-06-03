@@ -7,8 +7,11 @@ var texto = document.createElement('p');
 var container = document.getElementById('textbox');
 
 btn.addEventListener('click', () => {
+    btn.disabled = true;
     dictate();
-
+    setTimeout( function ()  {
+        btn.disabled= false;
+    }, 10000);
 });
 
 function get_mic_data() {
@@ -42,10 +45,7 @@ function get_mic_data() {
             req4.open("GET", `/api/residuo/archivo/${3}`,false);
             req4.send(null);
         }
-        //console.log("holaxd"+req.responseText);
-
-        console.log(`todo funca: `+query);
-
+        console.log(`todo funciona: `+query);
     }else{
         var req5 = new XMLHttpRequest();
         req5.open("GET", `/api/residuo/archivo/${4}`,false);

@@ -12,7 +12,7 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
-//body parser
+//body parser lo usamos para poder mandar los /api/residuo/:residuoId  esto =>":residuoId "
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -28,7 +28,7 @@ mongoose.connect('mongodb+srv://nico:toor@sgd-ftwrh.mongodb.net/reciclaje', (err
     if (err) {
         return console.log(`Error al conectarse a la bd: ${err}`);
     }
-    //console.log('Conexion a la bd establecida');
+    console.log('Conexion a la bd establecida');
 });
 
 const garbageCtrl = require('./controller/garbage');
@@ -39,11 +39,9 @@ app.get('/api/residuo', garbageCtrl.getGarbage);
 app.get('/api/residuo/:residuoId',garbageCtrl.getGarbageID);
 //GET: Nombre especifico
 app.get('/api/residuo/nom/:nom_residuo',garbageCtrl.getGarbageNR);
-//GET: tipo de residuo especifico
-app.get('/api/residuo/tipo/:tipo_residuo',garbageCtrl.getGarbageTE);
-//POST: Guardar residuos
+//POST: Guardar residuos, no lo usamos por ahora
 app.post('/api/residuo', garbageCtrl.saveGarbage);
-//Guardar archivo con nombre de coso
+//Guardar archivo con 1,2,3,4.
 app.get('/api/residuo/archivo/:nom_residuo_file', garbageCtrl.saveFilen);
 
 // catch 404 and forward to error handler

@@ -1,7 +1,7 @@
 const garbage = require('../model/garbage');
 
 var fs = require('fs');
-
+//Buscar residuo por ID /api/residuo/:residuoId
 function getGarbageID(req, res) {
     let residuoId = req.params.residuoId;
 
@@ -13,6 +13,7 @@ function getGarbageID(req, res) {
     });
 };
 
+//Buscar residuo por nombre_residuo /api/residuo/nom/:nom_residuo
 function getGarbageNR(req, res) {
     var name = req.params.nom_residuo;
     garbage.findOne({"nombre_residuo":name},(err, name) => {
@@ -23,17 +24,7 @@ function getGarbageNR(req, res) {
     });
 };
 
-//Tipo especifico
-function getGarbageTE(req, res) {
-    var tipo = req.params.tipo_residuo;
-    garbage.findOne({"tipo_residuo":tipo},(err, tipo) => {
-        if(err){
-            return res.status(500).send({message: `error al realizar la peticion : ${err}`});
-        }
-        res.json(tipo);
-    });
-};
-
+//Buscar residuo por nombre_residuo /api/residuo/nom/:nom_residuo
 function getGarbage(req, res) {
     garbage.find({}, (err, residuos) => {
         if(err) return res.status(500).send({message: `error al realizar la peticion : ${err}`});
@@ -42,6 +33,8 @@ function getGarbage(req, res) {
     });
 };
 
+//Guardar tipos de basura /api/residuo/
+//No lo usamos por ahora
 function saveGarbage(req, res){
 
     let residuo = new garbage();
@@ -55,41 +48,25 @@ function saveGarbage(req, res){
     });
 };
 
+//Guardar archivo basura.txt /api/residuo/archivo/:nom_residuo_file
 function saveFilen(req, res){
 
     var dataName = req.params.nom_residuo_file;
     const dataCuatro = 4;
 
-    function saveData(){
-        var fs = require("fs");
-        let path = "basura.txt";
-        fs.writeFile(path,dataName, (err) => {
+    var fs = require("fs");
+    let path = "basura.txt";
+    fs.writeFile(path,dataName, (err) => {
+        if (err) throw err;
+        console.log('guardado el: '+dataName);
+    });
+
+    setTimeout( function ()  {
+        fs.writeFile(path,dataCuatro, (err) => {
             if (err) throw err;
-            console.log('guardado el: '+dataName);
+            console.log('guardado el 4');
         });
-
-        setTimeout( function ()  {
-            fs.writeFile(path,dataCuatro, (err) => {
-                if (err) throw err;
-                console.log('guardado el 4');
-            });
-        }, 5000);
-    }
-
-    switch(dataName) {
-        case "1":
-            saveData();
-            break;
-        case "2":
-            saveData();
-            break;
-        case "3":
-            saveData();
-            break;
-        case "4":
-            saveData();
-            break;
-    }
+    }, 5000);
 
     res.status(200).send("Correcto");
 };
@@ -99,8 +76,7 @@ module.exports = {
     getGarbage,
     getGarbageNR,
     saveGarbage,
-    saveFilen,
-    getGarbageTE
+    saveFilen
 };
 
 
