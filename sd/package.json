@@ -1,6 +1,6 @@
 {
-  "name": "sgd",
-  "version": "0.0.0",
+  "name": "sd",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
