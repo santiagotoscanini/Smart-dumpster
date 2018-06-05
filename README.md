@@ -5,11 +5,11 @@ This smart dumpster for recycling, which open one or another lid depending what 
 
 https://www.youtube.com/watch?v=tHAK6SPQCzU
 
-![alt text](https://imgur.com/oYzSlgV)
+![alt text](/sd/public/images/verde.png)
 
-![alt text](https://imgur.com/x3nWXlF)
+![alt text](/sd/public/images/amarillo.png))
 
-![alt text](https://imgur.com/MT8G3s1)
+![alt text](/sd/public/images/azul.png)
 ### Prerequisites
 Hardware
 ```
