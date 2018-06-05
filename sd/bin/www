@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('sgd:server');
+var debug = require('debug')('sd:server');
 var http = require('http');
 
 /**
