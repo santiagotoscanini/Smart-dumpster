@@ -3,13 +3,14 @@
 ## Getting Started
 This smart dumpster for recycling, which open one or another lid depending what you said.
 
-https://www.youtube.com/watch?v=tHAK6SPQCzU
-
 ![alt text](/sd/public/images/verde.png)
 
-![alt text](/sd/public/images/amarillo.png))
+![alt text](/sd/public/images/amarillo.png)
 
-![alt text](/sd/public/images/azul.png)
+![alt text](/sd/public/images/azul.png) 
+
+[![](/sd/public/images/smartDM.png)](https://www.youtube.com/watch?v=tHAK6SPQCzU)
+
 ### Prerequisites
 Hardware
 ```
