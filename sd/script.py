@@ -1,7 +1,7 @@
 import serial
 import time
 
-serial_p = serial.Serial("COM14", 9600)
+serial_p = serial.Serial("COM5", 9600)
 
 data = open("basura.txt","r").read()
 

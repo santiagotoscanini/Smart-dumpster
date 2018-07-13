@@ -26,6 +26,7 @@ function getGarbageNR(req, res) {
 
 //Buscar residuo por nombre_residuo /api/residuo/nom/:nom_residuo
 function getGarbage(req, res) {
+    
     garbage.find({}, (err, residuos) => {
         if(err) return res.status(500).send({message: `error al realizar la peticion : ${err}`});
         if(!garbage) return res.status(404).send({message: `No existen productos`});
