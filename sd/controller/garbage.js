@@ -49,6 +49,9 @@ function saveGarbage(req, res){
     });
 };
 
+function deleteR(req, res){
+    garbage.deleteMany({});
+}
 //Guardar archivo basura.txt /api/residuo/archivo/:nom_residuo_file
 function saveFilen(req, res){
 
@@ -73,6 +76,7 @@ function saveFilen(req, res){
 };
 
 module.exports = {
+    deleteR,
     getGarbageID,
     getGarbage,
     getGarbageNR,

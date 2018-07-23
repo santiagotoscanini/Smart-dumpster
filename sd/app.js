@@ -45,6 +45,8 @@ app.get('/api/residuo/nom/:nom_residuo',garbageCtrl.getGarbageNR);
 app.post('/api/residuo', garbageCtrl.saveGarbage);
 //Guardar archivo con 1,2,3,4.
 app.get('/api/residuo/archivo/:nom_residuo_file', garbageCtrl.saveFilen);
+//Borrar todo de la bd
+app.get('/api/borrar', garbageCtrl.deleteR);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

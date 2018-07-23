@@ -11,6 +11,7 @@ btn.addEventListener('click', () => {
     dictate();
     setTimeout( function ()  {
         btn.disabled= false;
+        container.value = "";
     }, 10000);
 });
 
@@ -32,7 +33,7 @@ function get_mic_data() {
     // null pq es get
     req33.send(null);
     // Impresión por la consola de la respuesta recibida desde el servidor
-    console.log(req33.responseText);
+    //console.log(req33.responseText);
 
     var request = req.responseText;
 
