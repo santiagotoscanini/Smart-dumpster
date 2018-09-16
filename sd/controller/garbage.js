@@ -30,7 +30,7 @@ function getGarbage(req, res) {
     garbage.find({}, (err, residuos) => {
         if(err) return res.status(500).send({message: `error al realizar la peticion : ${err}`});
         if(!garbage) return res.status(404).send({message: `No existen productos`});
-        res.send(200, {residuos})
+        res.status(200).send({residuos});
     });
 };
 

@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'views')));
 app.use('/', indexRouter);
 
 //conexion bd
-mongoose.connect('mongodb+srv://nico:toor@sgd-ftwrh.mongodb.net/reciclaje', (err, res) => {
+mongoose.connect('mongodb+srv://nico:toor@sgd-ftwrh.mongodb.net/reciclaje', { useNewUrlParser: true }, function (err, res) {
     if (err) {
         return console.log(`Error al conectarse a la bd: ${err}`);
     }

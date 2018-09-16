@@ -6,14 +6,16 @@ var btn = document.getElementById('btn1');
 var texto = document.createElement('p');
 var container = document.getElementById('textbox');
 
-btn.addEventListener('click', () => {
-    btn.disabled = true;
-    dictate();
-    setTimeout( function ()  {
-        btn.disabled= false;
-        container.value = "";
-    }, 10000);
-});
+document.body.onkeyup= function(e) {
+    if(e.keyCode == 32){
+        btn.disabled = true;
+        dictate();
+        setTimeout( function ()  {
+            btn.disabled= false;
+            container.value = "";
+        }, 10000);
+    }  
+};
 
 function get_mic_data() {
     var query = texto.innerText;
@@ -40,17 +42,17 @@ function get_mic_data() {
     if(request.includes(query)){
         var tipo_amarillo = "amarillo";
         var tipo_azul ="azul";
-        var tipo_verde = "verde";
+        var tipo_gris = "gris";
         var tipo_todo = "todo";
-        if(request.includes(tipo_azul)){
+        if(request.includes(tipo_gris)){
             var req2 = new XMLHttpRequest();
             req2.open("GET", `/api/residuo/archivo/${1}`,false);
             req2.send(null);
-        }else if(request.includes(tipo_amarillo)){
+        }else if(request.includes(tipo_azul)){
             var req3 = new XMLHttpRequest();
             req3.open("GET", `/api/residuo/archivo/${2}`,false);
             req3.send(null);
-        }else if(request.includes(tipo_verde)){
+        }else if(request.includes(tipo_amarillo)){
             var req4 = new XMLHttpRequest();
             req4.open("GET", `/api/residuo/archivo/${3}`,false);
             req4.send(null);
