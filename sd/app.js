@@ -6,12 +6,17 @@ var cookieParser = require('cookie-parser');
 
 var mongoose = require('mongoose');
 var indexRouter = require('./routes/index');
+var fs = require('fs');
+var https = require('https');
+
+
 
 var app = express();
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
+
 
 
 //body parser lo usamos para poder mandar los /api/residuo/:residuoId  esto =>":residuoId "
@@ -25,6 +30,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'views')));
 app.use('/', indexRouter);
 
+const options = {
+  key: fs.readFileSync('facsi.uy.key'),
+  cert: fs.readFileSync('98abd8f90d301e3.crt'),
+  //ca: [fs.readFileSync('gd1.crt'), fs.readFileSync('gd2.crt'), fs.readFileSync('gd3.crt')],
+  passphrase: ('Fac*18si', 'utf8'),
+};
+
+https.createServer(options, app).listen(app.locals.port, function() {
+ console.log("Started on PORT " + app.locals.port);
+});
 //conexion bd
 mongoose.connect('mongodb+srv://nico:toor@sgd-ftwrh.mongodb.net/reciclaje', { useNewUrlParser: true }, function (err, res) {
     if (err) {
