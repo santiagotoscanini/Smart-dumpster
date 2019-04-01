@@ -5,7 +5,7 @@ This smart dumpster for recycling, which open one or another lid depending what 
 
 ↓ If you want to see a preview, click in the imgage here ↓
 
-[![](/sd/views/images/smartDM.png)](https://www.youtube.com/watch?v=tHAK6SPQCzU)
+[![](/sd/views/images/smartDM.png)](https://www.youtube.com/watch?v=n0_aM5XW8Vg)
 
 ![alt text](/sd/public/images/verde.png)
 
