@@ -12,16 +12,18 @@ var https = require('https');
 
 
 var app = express();
+
+app.set('port', process.env.PORT || 3000);
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 
-
-
 //body parser lo usamos para poder mandar los /api/residuo/:residuoId  esto =>":residuoId "
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -67,4 +69,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+app.listen(app.get('port'),() =>{
+  console.log('Server on port', "http://localhost:"+app.get('port'));
+});
+
+//module.exports = app;

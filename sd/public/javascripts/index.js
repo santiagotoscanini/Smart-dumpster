@@ -15,29 +15,21 @@ document.body.onkeyup= function(e) {
             container.value = "";
         }, 10000);
     }  
+
 };
 
 function get_mic_data() {
     var query = texto.innerText;
 
     // Creación de la petición HTTP
-    var req = new XMLHttpRequest();
-    // Petición HTTP GET síncrona hacia el archivo del servidor${query}
-    req.open("GET", `http://localhost:3000/api/residuo/nom/${query}`, false);
-    // null pq es get
-    req.send(null);
-    // Impresión por la consola de la respuesta recibida desde el servidor
-    console.log(req.responseText);
+    var reqGetDBData = new XMLHttpRequest();
+    reqGetDBData.open("GET", `http://localhost:3000/api/residuo/nom/${query}`, false);
+    reqGetDBData.send(null);
+    console.log(reqGetDBData.responseText);
 
-    var req33 = new XMLHttpRequest();
-    // Petición HTTP GET síncrona hacia el archivo del servidor${query}
-    req33.open("GET", `http://localhost:3000/api/residuo`, false);
-    // null pq es get
-    req33.send(null);
-    // Impresión por la consola de la respuesta recibida desde el servidor
-    //console.log(req33.responseText);
+ 
 
-    var request = req.responseText;
+    var request = reqGetDBData.responseText;
 
     if(request.includes(query)){
         var tipo_amarillo = "amarillo";
