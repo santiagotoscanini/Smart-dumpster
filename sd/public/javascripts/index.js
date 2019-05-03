@@ -15,19 +15,18 @@ document.body.onkeyup= function(e) {
             container.value = "";
         }, 10000);
     }  
-
 };
 
 function get_mic_data() {
+    //console.time("concatenation");
+    //var start = new Date().getTime();
     var query = texto.innerText;
-
+    
     // Creación de la petición HTTP
     var reqGetDBData = new XMLHttpRequest();
     reqGetDBData.open("GET", `http://localhost:3000/api/residuo/nom/${query}`, false);
     reqGetDBData.send(null);
     console.log(reqGetDBData.responseText);
-
- 
 
     var request = reqGetDBData.responseText;
 
@@ -54,15 +53,21 @@ function get_mic_data() {
             req6.send(null);
         console.log(`todo funciona: `+query);
         }
-    }else{
+    }/*else{
         var req5 = new XMLHttpRequest();
         req5.open("GET", `/api/residuo/archivo/${4}`,false);
         req5.send(null);
-    }
+    }*/
+    //var end = new Date().getTime();
+    //var time = end - start;
+    //console.log('Execution time: ' + time);
+    //console.timeEnd("concatenation");
     return console.log(query);
+    
 };
 
 const dictate = () => {
+  
     recognition.start();
     recognition.onresult = (event) => {
         const speechToText = event.results[0][0].transcript;
@@ -70,4 +75,5 @@ const dictate = () => {
         get_mic_data();
         container.value = (texto.innerHTML);
     };
+    
 };

@@ -41,3 +41,5 @@ cd sd
 pip install pyserial
 python script.py
 ```
+
+>npm install -g windows-build-tools
