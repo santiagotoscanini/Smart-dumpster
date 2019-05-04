@@ -10,7 +10,6 @@ var fs = require('fs');
 var https = require('https');
 
 
-
 var app = express();
 
 app.set('port', process.env.PORT || 3000);
@@ -18,7 +17,6 @@ app.set('port', process.env.PORT || 3000);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
-
 
 //body parser lo usamos para poder mandar los /api/residuo/:residuoId  esto =>":residuoId "
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -53,6 +51,8 @@ app.post('/api/residuo', garbageCtrl.saveGarbage);
 app.get('/api/residuo/archivo/:nom_residuo_file', garbageCtrl.saveFilen);
 //Borrar todo de la bd
 app.get('/api/borrar', garbageCtrl.deleteR);
+//Categorize
+app.get('/api/categoria', garbageCtrl.categoria);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

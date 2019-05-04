@@ -51,7 +51,7 @@ function saveGarbage(req, res){
 
 function deleteR(req, res){
     garbage.deleteMany({});
-}
+};
 //Guardar archivo basura.txt /api/residuo/archivo/:nom_residuo_file
 function saveFilen(req, res){
 
@@ -75,13 +75,46 @@ function saveFilen(req, res){
     res.status(200).send("Correcto");
 };
 
+function categoria(req, res){
+    var natural = require('natural');
+    var classifier = new natural.BayesClassifier();
+    var tokenizer = new natural.WordTokenizer();
+
+    //classifier.addDocument('i am long qqqq', 'buy');
+    var tengoUna = tokenizer.tokenize("quiero tirar botella");
+    classifier.addDocument('tengo', 'intencion');
+    classifier.addDocument('una', 'intencion');
+    classifier.addDocument('quiero tirar', 'intencion');
+    classifier.addDocument('botella', 'residuo');
+
+    classifier.train();
+
+    //console.log(classifier.getClassifications('quiero tirar una botella'));
+    //console.log(classifier.getClassifications('quiero tengo botella'));
+    tengoUna.forEach(element => {
+        console.log('\x1b[35m%s\x1b[0m',element);
+        console.log(classifier.getClassifications(element));
+        console.log('\x1b[36m%s\x1b[0m', classifier.classify(element),"\x1b[0m");
+    });
+    
+/*
+    console.log(classifier.classify('quiero tirar una botella'));
+    console.log(classifier.classify('quiero tengo botella'));
+    console.log(classifier.classify(tengoUna));
+    //console.log(classifier.getClassifications('tengo una botella'));
+    //console.log(classifier.getClassifications('i am long copper'));
+*/
+    res.status(200).send("correcto");
+};
+
 module.exports = {
     deleteR,
     getGarbageID,
     getGarbage,
     getGarbageNR,
     saveGarbage,
-    saveFilen
+    saveFilen,
+    categoria
 };
 
 
