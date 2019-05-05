@@ -52,7 +52,7 @@ app.get('/api/residuo/archivo/:nom_residuo_file', garbageCtrl.saveFilen);
 //Borrar todo de la bd
 app.get('/api/borrar', garbageCtrl.deleteR);
 //Categorize
-app.get('/api/categoria', garbageCtrl.categoria);
+app.get('/api/nlp/:nom_residuo', garbageCtrl.nlp);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

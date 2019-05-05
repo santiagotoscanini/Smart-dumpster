@@ -1,0 +1,204 @@
+{
+    "residuos": [
+        {
+            "nombre_residuo": "papel",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "cartulina",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "cartón",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "diarios",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "revistas",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "folletos",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "folleto",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "cuaderno",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "cuadernos",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "libros",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "libro",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "botella de refresco",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "botella de jugo",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "botella de agua",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "servilletas",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "hojas",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "servilleta",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "pañuelo",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "envoltorios",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "envoltorio",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "botella de plástico",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "lata",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "cerámica",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "vidrio",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "yerba",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "hoja",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "comida",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "pañuelos",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "latas",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "guías telefónicas",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "hierba",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "guía telefónica",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "cuadernolas",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "botella de vidrio",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "chicle",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "pañal",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "boletos",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "boleto",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "envoltorio de alfajor",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "envoltorio de Chicle",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "envoltorio de pastillas",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "envoltorio de pastillas",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "envoltorio de barra de cereal",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "papel de Chicle",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "papel de pastillas",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "papel de alfajor",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "papel de pastillas",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "cuadernola",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "papeles",
+            "tipo_residuo": "residuo"
+        },
+        {
+            "nombre_residuo": "botellas de plástico",
+            "tipo_residuo": "residuo"
+        }
+    ]
+}
